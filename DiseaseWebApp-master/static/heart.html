@@ -1,0 +1,192 @@
+
+<!-- This is GUI for Heart Detection Application Using Machine Learning Classifer -->
+
+<!DOCTYPE html>
+<html >	
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Heart</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+
+<style>
+    /* CSS code for button */
+    body {
+      background-image: url('https://i1.wp.com/thejournalofmhealth.com/wp-content/uploads/2020/04/Impact-of-COVID-19-on-Health-Technology-Sector-Simedics.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-color: rgba(0, 0, 0, 0.5);
+      background-size: cover;
+}
+
+    /* CSS code for button */
+    .button_css {
+    color: #494949 !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    /*background: #ffffff;*/
+    padding: 10px;
+    /*border: 3px solid #494949 !important;*/
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+    }
+
+    .button_css:hover {
+   /* color: #000000 ;
+    background: #6A5ACD;
+    border-color: #FFFFFF ;
+    transition: all 0.4s ease 0s;*/
+    }
+
+
+   .intro-bg .socials a{
+	color: #ffff;
+	font-size: 1.5em;
+	padding: 4px;
+	transition: all 0.5s linear;
+}
+
+   .intro-bg .socials a:hover {
+	color:  #ffffff;
+	transition: all 0.4s ease 0s;
+}
+
+*,body,input,select {   font-family: Arial, Helvetica, sans-serif;
+}
+</style>
+
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#"> Diseases Prediction Webapp </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+  </button>
+      <div class="collapse navbar-collapse" id="navbarToggle">
+        <div class="navbar-nav mr-auto">
+          <a class="nav-item nav-link" href="/">Home</a>
+          <a class="nav-item nav-link" href="about">About</a>
+          <a class="nav-item nav-link" href="Cancer_page">Cancer</a>
+          <a class="nav-item nav-link" href="Diabetes_page">Diabetes</a>
+          <a class="nav-item nav-link" href="Heart_page">Heart</a>
+          <a class="nav-item nav-link" href="Liver_page">Liver</a>
+          <a class="nav-item nav-link" href="Kidney_page">Kidney</a>
+          <a class="nav-item nav-link" href="Malaria">Malaria</a>
+          <a class="nav-item nav-link" href="Pneumonia">Pneumonia</a>
+
+        </div>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      
+
+
+  </div>
+</nav>
+
+
+
+ <section class="login">
+
+    <!-- Get input for predict the Heart -->
+    <center>
+        <h2 class="text-black"> <b>AI For Healthcare</b> </h2>
+    <p class="text-black"><b>Hi, this is  Machine Learning app which predicts whether the patient has Heart or Not!</b></p>
+	<p class="text-black"><b>Enter the values for heart prediction</b></p>
+
+
+    <form action="/predict"method="post">
+<Table align="center-right">	
+        <TR>
+			<TD><label class="text-black" for="Age">Age : </label></TD>
+			<TD><input type="text" name="Age" placeholder="Age" required="required" /> <br></TD>
+		</TR>
+		<TR>
+			<TD><label class="text-black" for="Gender(1:Male,0:Female)">Gender(1:Male,0:Female) : </label></TD>
+			<TD><input type="text" name="Gender(1:Male,0:Female)" placeholder="Gender(1:Male,0:Female)" required="required" /><br></TD>
+		</TR>
+		<TR>
+			<TD><label class="text-black" for="Chest pain type">Chest pain type : </label></TD>
+			<TD><input type="text" name="Chest pain type" placeholder="Chest pain type" required="required" /><br></TD>
+		</TR>
+		<TR>
+			<TD><label class="text-black" for="Trestbps">Trestbps : </label></TD>
+			<TD><input type="text" name="Trestbps" placeholder="Trestbps" required="required" /><br></TD>
+		</TR>
+		<TR>
+			<TD><label class="text-black" for="Serum cholestoral in mg/dl">Serum cholestoral in mg/dl : </label></TD>
+			<TD><input type="text" name="Serum cholestoral in mg/dl" placeholder="Serum cholestoral in mg/dl" required="required" /><br></TD>
+		</TR>
+		<TR>
+			<TD><label class="text-black" for="Restecg">Restecg : </label></TD>
+			<TD><input type="text" name="Restecg" placeholder="Restecg" required="required" /><br></TD>
+		</TR>
+		<TR>
+			<TD><label class="text-black" for="Thalach">Thalach : </label></TD>
+			<TD><input type="text" name="Thalach" placeholder="Thalach" required="required" /><br></TD>
+		</TR>
+		<TR>
+			<TD><label class="text-black" for="Exang">Exang : </label></TD>
+			<TD><input type="text" name="Exang" placeholder="Exang" required="required" /></TD>
+		</TR>
+		<TR>
+			<TD><label class="text-black" for="Oldpeak">Oldpeak : </label></TD>
+			<TD><input type="text" name="Oldpeak" placeholder="Oldpeak" required="required" /><br></TD>
+		</TR>
+		<TR>
+			<TD><label class="text-black" for="Slope">Slope : </label></TD>
+			<TD><input type="text" name="Slope" placeholder="Slope" required="required" /><br></TD>
+		</TR>
+		<TR>
+			<TD><label class="text-black" for="Thal">Thal : </label></TD>
+			<TD><input type="text" name="Thal" placeholder="Thal" required="required" /><br></TD>
+		</TR>
+
+	</TR>
+</Table>	
+    <div class="text-muted">.
+
+    </div> 
+        <!-- Show button -->
+        <div class="button_cont" align="center"><a class="button_css" >
+            <button type="submit" class="btn btn-primary btn-block btn-large"><strong>Predict Heart</strong></button></a>
+        </div>
+
+    </form>
+
+
+   <!-- Show predicted output using ML model -->
+   <div>
+       <a>
+
+ <a class="text-warning text-decoration-none" href="#"
+
+   <h2 ></h2> </a>
+   <section class="intro-bg ">
+
+    
+    </section>
+       </center>
+        <footer>
+      <div class="container text-muted text-center py-3 mt-5">
+        <h6>
+          Copyright  &copy; 2020 
+          
+        </h6>
+      </div>
+    </footer>
+
+
+         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
+##

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+  <title>Diabetes_pred</title>
+    
+</head>
+  <style>
+   /* CSS code for background */
+    body {
+      background-image: url('../../BackPageImage.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-color: rgba(0, 0, 0, 0.5);
+      background-size: cover;
+}
+    #main-footer
+    {
+      color: #FFFFFF;
+      font-family: "Segoe UI";
+      background: ;
+      text-align: center;
+      margin-top: 125px;
+      padding: 16px;
+      bottom: 8px;
+    } /* CSS code for button */
+    .button_css {
+    color: #494949 !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    /*background: #ffffff;*/
+    padding: 10px;
+    /*border: 3px solid #494949 !important;*/
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+    }
+
+    .button_css:hover {
+   /* color: #000000 ;
+    background: #6A5ACD;
+    border-color: #FFFFFF ;
+    transition: all 0.4s ease 0s;*/
+    }
+
+
+   .intro-bg .socials a{
+  color: #ffff;
+  font-size: 1.5em;
+  padding: 4px;
+  transition: all 0.5s linear;
+}
+
+   .intro-bg .socials a:hover {
+  color:  #ffffff;
+  transition: all 0.4s ease 0s;
+}
+
+*,body,input,select {   font-family: Arial, Helvetica, sans-serif;
+}
+</style>
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#"> Diseases Prediction Webapp </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+  </button>
+      <div class="collapse navbar-collapse" id="navbarToggle">
+        <div class="navbar-nav mr-auto">
+          <a class="nav-item nav-link" href="/">Home</a>
+          <a class="nav-item nav-link" href="about">About</a>
+          <a class="nav-item nav-link" href="Cancer_page.html">Cancer</a>
+          <a class="nav-item nav-link" href="Diabetes_page.html">Diabetes</a>
+          <a class="nav-item nav-link" href="Heart_page.html">Heart</a>
+          <a class="nav-item nav-link" href="Liver_page.html">Liver</a>
+          <a class="nav-item nav-link" href="Kidney_page.html">Kidney</a>
+          <a class="nav-item nav-link" href="Malaria.html">Malaria</a>
+          <a class="nav-item nav-link" href="Pneumonia">Pneumonia</a>
+
+        </div>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      
+
+
+  </div>
+</nav>
+</header>
+<BR><BR>
+<div class="container",class="form-group">
+   <center>
+        <h2 class="text-black"> <b>AI For Healthcare</b> </h2>
+    <p class="text-black"><b>Hi, this is  Machine Learning app which predicts whether the patient has Diabetes or Not!</b></p>
+  <p class="text-black"><b>Enter the values for diabetes prediction</b></p>
+
+
+    <form action="/result"method="post">
+<Table align="center-right">  
+        <TR>
+      <TD><label class="text-black">Pregnancies : </label></TD>
+      <TD><input type="text" name="Pregnancies" placeholder="Pregnancies" required="required" /> <br></TD>
+    </TR>
+    <TR>
+      <TD><label class="text-black" for="Glucose">Glucose : </label></TD>
+      <TD><input type="text" name="Glucose" placeholder="Glucose" required="required" /><br></TD>
+    </TR>
+    <TR>
+      <TD><label class="text-black" for="BloodPressure">BloodPressure : </label></TD>
+      <TD><input type="text" name="BloodPressure" placeholder="BloodPressure" required="required" /><br></TD>
+    </TR>
+    <TR>
+      <TD><label class="text-black" for="SkinThickness">SkinThickness : </label></TD>
+      <TD><input type="text" name="SkinThickness" placeholder=" SkinThickness" required="required" /><br></TD>
+    </TR>
+    <TR>
+      <TD><label class="text-black" for="Insulin">Insulin : </label></TD>
+      <TD><input type="text" name="Insulin" placeholder="Insulin" required="required" /><br></TD>
+    </TR>
+    <TR>
+      <TD><label class="text-black" for="BMI">BMI : </label></TD>
+      <TD><input type="text" name="BMI" placeholder="BMI" required="required" /><br></TD>
+    </TR>
+    <TR>
+      <TD><label class="text-black" for="DiabetesPedigreeFunction">DiabetesPedigreeFunction : </label></TD>
+      <TD><input type="text" name="DiabetesPedigreeFunction" placeholder="DiabetesPedigreeFunction" required="DiabetesPedigreeFunction" /><br></TD>
+    </TR>
+    <TR>
+      <TD><label class="text-black" for="Age">Age : </label></TD>
+      <TD><input type="text" name="Age" placeholder="Age" required="required" /></TD>
+    </TR>
+  </TR>
+</Table>  
+    <div class="text-muted">.
+
+    </div> 
+    <br>
+    <br>
+
+    <input type="submit" value="Submit"><br><br>
+</form>
+
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <footer id="main-footer">
+      Copyright &copy; 2020
+    </footer>
+</body>
+</html>
