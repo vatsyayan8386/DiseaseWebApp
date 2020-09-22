@@ -1,0 +1,267 @@
+<!-- This is GUI for Breast Cancer Detection Application Using Machine Learning Classifer -->
+
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Cancer</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+
+<style>
+    /* CSS code for button */
+    body {
+      background-image: url('https://i1.wp.com/thejournalofmhealth.com/wp-content/uploads/2020/04/Impact-of-COVID-19-on-Health-Technology-Sector-Simedics.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-color: rgba(0, 0, 0, 0.5);
+      background-size: cover;
+}
+
+    /* CSS code for button */
+    .button_css {
+    color: #494949 !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    /*background: #ffffff;*/
+    padding: 10px;
+    /*border: 3px solid #494949 !important;*/
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+    }
+
+    .button_css:hover {
+   /* color: #000000 ;
+    background: #6A5ACD;
+    border-color: #FFFFFF ;
+    transition: all 0.4s ease 0s;*/
+    }
+
+
+   .intro-bg .socials a{
+	color: #ffff;
+	font-size: 1.5em;
+	padding: 4px;
+	transition: all 0.5s linear;
+}
+
+   .intro-bg .socials a:hover {
+	color:  #ffffff;
+	transition: all 0.4s ease 0s;
+}
+
+*,body,input,select {   font-family: Arial, Helvetica, sans-serif;
+}
+</style>
+
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#"> Diseases Prediction Webapp </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+  </button>
+      <div class="collapse navbar-collapse" id="navbarToggle">
+        <div class="navbar-nav mr-auto">
+          <a class="nav-item nav-link" href="/">Home</a>
+          <a class="nav-item nav-link" href="about">About</a>
+          <a class="nav-item nav-link" href="Cancer_page.html">Cancer</a>
+          <a class="nav-item nav-link" href="Diabetes_page.html">Diabetes</a>
+          <a class="nav-item nav-link" href="Heart_page.html">Heart</a>
+          <a class="nav-item nav-link" href="Liver_page.html">Liver</a>
+          <a class="nav-item nav-link" href="Kidney_page.html">Kidney</a>
+          <a class="nav-item nav-link" href="Malaria.html">Malaria</a>
+          <a class="nav-item nav-link" href="Pneumonia">Pneumonia</a>
+
+        </div>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      
+
+
+  </div>
+</nav>
+
+
+
+ <section class="login">
+
+    <!-- Get input for predict the cancer -->
+    <center>
+        <h2 class="text-black"> <b>AI For Healthcare</b> </h2>
+    <p class="text-black"><b>Hi, this is  Machine Learning app which predicts whether the patient has Cancer or Not!</b></p>
+	<p class="text-black"><b>Enter the values for cancer prediction</b></p>
+
+
+    <form action="/predict"method="post">
+<Table align="center-right">	
+        <TR>
+			<TD><label class="text-black">Radius_mean : </label></TD>
+			<TD><input type="text" name="Radius_mean" placeholder="Radius_mean" required="required" /> <br></TD>
+		</TR>
+		<TR>
+			<TD><label class="text-black" for="Texture_mean">Texture_mean : </label></TD>
+			<TD><input type="text" name="Texture_mean" placeholder="Texture_mean" required="required" /><br></TD>
+		</TR>
+		<TR>
+			<TD><label class="text-black" for="Perimeter_mean">Perimeter_mean : </label></TD>
+			<TD><input type="text" name="Perimeter_mean" placeholder="Perimeter_mean" required="required" /><br></TD>
+		</TR>
+		<TR>
+			<TD><label class="text-black" for="Area_mean">Area_mean : </label></TD>
+			<TD><input type="text" name="Area_mean" placeholder=" Area_mean" required="required" /><br></TD>
+		</TR>
+		<TR>
+			<TD><label class="text-black" for="Smoothness_mean">Smoothness_mean : </label></TD>
+			<TD><input type="text" name="Smoothness_mean" placeholder="Smoothness_mean" required="required" /><br></TD>
+		</TR>
+		<TR>
+			<TD><label class="text-black" for="Compactness_mean">Compactness_mean : </label></TD>
+			<TD><input type="text" name="Compactness_mean" placeholder="Compactness_mean" required="required" /><br></TD>
+		</TR>
+		<TR>
+			<TD><label class="text-black" for="Concavity_mean">Concavity_mean : </label></TD>
+			<TD><input type="text" name="Concavity_mean" placeholder="Concavity_mean" required="required" /><br></TD>
+		</TR>
+		<TR>
+			<TD><label class="text-black" for="Concave points_mean">Concave points_mean : </label></TD>
+			<TD><input type="text" name="Concave points_mean" placeholder="Concave points_mean" required="required" /></TD>
+		</TR>
+		<TR>
+			<TD><label class="text-black" for="Symmetry_mean">Symmetry_mean : </label></TD>
+			<TD><input type="text" name="Symmetry_mean" placeholder="Symmetry_mean" required="required" /><br></TD>
+		</TR>
+		<TR>
+			<TD><label class="text-black" for="Fractal_dimension_mean">Fractal_dimension_mean : </label></TD>
+			<TD><input type="text" name="Fractal_dimension_mean" placeholder="Fractal_dimension_mean" required="required" /><br></TD>
+		</TR>
+		<TR>
+			<TD><label class="text-black" for="Radius_se">Radius_se : </label></TD>
+			<TD><input type="text" name="Radius_se" placeholder="Radius_se" required="required" /><br></TD>
+		</TR>
+		<TR>
+			<TD><label class="text-black" for="Texture_se">Texture_se : </label></TD>
+			<TD><input type="text" name="Texture_se" placeholder="Texture_se" required="required" /><br></TD>
+		</TR>
+		<TR>
+			<TD><label class="text-black" for="Perimeter_se">Perimeter_se : </label></TD>
+			<TD><input type="text" name="Perimeter_se" placeholder="Perimeter_se" required="required" /><br></TD>
+		</TR>
+		<TR>
+			<TD><label class="text-black" for="Area_se">Area_se : </label></TD>
+			<TD><input type="text" name="Area_se" placeholder="Area_se" required="required" /><br></TD>
+		</TR>	
+		<TR>
+			<TD><label class="text-black" for="Smoothness_se">Smoothness_se : </label></TD>
+			<TD><input type="text" name="Smoothness_se" placeholder="Smoothness_se" required="required" /><br></TD>
+		</TR>
+		<TR>
+			<TD><label class="text-black" for="Compactness_se">Compactness_se : </label></TD>
+			<TD><input type="text" name="Compactness_se" placeholder="Compactness_se" required="required" /><br></TD>
+		</TR>
+		<TR>
+			<TD><label class="text-black" for="Concavity_se">Concavity_se : </label></TD>
+			<TD><input type="text" name="Concavity_se" placeholder="Concavity_se" required="required" /><br></TD>
+		</TR>
+		<TR>
+			<TD><label class="text-black" for="Concave points_se">Concave points_se : </label></TD>
+			<TD><input type="text" name="Concave points_se" placeholder="Concave points_se" required="required" /><br></TD>
+		</TR>
+		<TR>
+			<TD><label class="text-black" for="Symmetry_se">Symmetry_se : </label></TD>
+			<TD><input type="text" name="Symmetry_se" placeholder="Symmetry_se" required="required" /><br></TD>
+		</TR>
+		<TR>
+			<TD><label class="text-black" for="Fractal_dimension_se">Fractal_dimension_se : </label></TD>
+			<TD><input type="text" name="Fractal_dimension_se" placeholder="Fractal_dimension_se" required="required" /><br></TD>
+		</TR>
+		<TR>
+			<TD><label class="text-black" for="Radius_worst">Radius_worst : </label></TD>
+			<TD><input type="text" name="Radius_worst" placeholder="Radius_worst" required="required" /><br></TD>
+		</TR>
+		<TR>
+			<TD><label class="text-black" for="Texture_worst">Texture_worst : </label></TD>
+			<TD><input type="text" name="Texture_worst" placeholder="Texture_worst" required="required" /><br></TD>
+		</TR>
+		<TR>
+			<TD><label class="text-black" for="Perimeter_worst">Perimeter_worst : </label></TD>
+			<TD><input type="text" name="Perimeter_worst" placeholder="Perimeter_worst" required="required" /><br></TD>
+		</TR>
+		<TR>
+			<TD><label class="text-black" for="Area_worst">Area_worst : </label></TD>
+			<TD><input type="text" name="Area_worst" placeholder="Area_worst" required="required" /><br></TD>
+		</TR>		
+		<TR>
+			<TD><label class="text-black" for="Smoothness_worst">Smoothness_worst : </label></TD>
+			<TD><input type="text" name="Smoothness_worst" placeholder="Smoothness_worst" required="required" /><br></TD>
+		</TR>		
+		<TR>
+			<TD><label class="text-black" for="Compactness_worst">Compactness_worst : </label></TD>
+			<TD><input type="text" name="Compactness_worst" placeholder="Compactness_worst" required="required" /><br></TD>
+		</TR>		
+		<TR>
+			<TD><label class="text-black" for="Concavity_worst">Concavity_worst : </label></TD>
+			<TD><input type="text" name="Concavity_worst" placeholder="Concavity_worst" required="required" /><br></TD>
+		</TR>		
+		<TR>
+			<TD><label class="text-black" for="Concave points_worst">Concave points_worst : </label></TD>
+			<TD><input type="text" name="Concave points_worst" placeholder="Concave points_worst" required="required" /><br></TD>
+		</TR>		
+		<TR>
+			<TD><label class="text-black" for="Symmetry_worst">Symmetry_worst : </label></TD>
+			<TD><input type="text" name="Symmetry_worst" placeholder="Symmetry_worst" required="required" /><br></TD>
+		</TR>
+		<TR>
+			<TD><label class="text-black" for="Fractal_dimension_worst">Fractal_dimension_worst : </label></TD>
+			<TD><input type="text" name="Fractal_dimension_worst" placeholder="Fractal_dimension_worst" required="required" /><br></TD>
+		</TR>				
+	</TR>
+</Table>	
+    <div class="text-muted">.
+
+    </div> 
+        <!-- Show button -->
+        <div class="button_cont" align="center"><a class="button_css" >
+            <button type="submit" class="btn btn-primary btn-block btn-large"><strong>Predict Cancer</strong></button></a>
+        </div>
+
+    </form>
+
+
+   <!-- Show predicted output using ML model -->
+   <div>
+       <a>
+
+ <a class="text-warning text-decoration-none" href="#"
+
+   <h2 ></h2> </a>
+   <section class="intro-bg ">
+
+    
+    </section>
+       </center>
+        <footer>
+      <div class="container text-muted text-center py-3 mt-5">
+        <h6>
+          Copyright  &copy; 2020 
+          
+        </h6>
+      </div>
+    </footer>
+
+
+         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
+##
